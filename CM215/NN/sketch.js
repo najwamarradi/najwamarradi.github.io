@@ -1,6 +1,6 @@
 
 document.ontouchmove = function(event){
-  event.prevantDefault();
+  event.preventDefault();
 }
 
 
