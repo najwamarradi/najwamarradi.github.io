@@ -18,7 +18,7 @@ function draw()
   background(255);
     
     for(var i=0;i<touches.length;i++){
-    if(i++)<touches length){
+    if(i++)<touches.length){
       line(touches[i]x,touches[i]y,touches[i+1]x,touches[i+1]y);
     }
     else{i+1<touches.length
