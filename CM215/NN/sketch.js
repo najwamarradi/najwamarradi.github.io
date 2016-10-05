@@ -6,5 +6,7 @@ function draw() {
   
 }
 function touchStarted(){
-  background(random(0,255),random(0,255),random(0,255));
+    background(random(255);
+    textSize(50);
+    text(touches[0],50,50);
 }
