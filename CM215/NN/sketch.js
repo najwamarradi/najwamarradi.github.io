@@ -9,11 +9,12 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   rectMode(CENTER);
   stroke(0);
-  fill(red);
+  noFill();
   strokeWeight(5);
 }
 
 function draw() 
+
 {
   background(255);
     
