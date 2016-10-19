@@ -9,12 +9,16 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   rectMode(CENTER);
   stroke(0);
-  noFill();
+  fill(red);
   strokeWeight(5);
 }
 
-function draw() 
-
+function draw()
+touches[(x,y),(x1,y1),(x2,y2)];
+vertex(x,y);
+vertex(x1,y1);
+vertex(x2,y2);
+fill(x)
 {
   background(255);
     
