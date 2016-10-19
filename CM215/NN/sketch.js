@@ -7,7 +7,7 @@ function setup() {
   ellipseMode(CENTER);
   stroke(0);
   noFill();
-  strokeWeight(6);
+  strokeWeight();
 }
 
 function draw() {
