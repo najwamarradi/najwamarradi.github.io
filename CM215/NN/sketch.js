@@ -7,22 +7,20 @@ function setup() {
   ellipseMode(CENTER);
   stroke(0);
   noFill();
-  strokeWeight(2);
+  strokeWeight(6);
 }
 
 function draw() {
   background(255);
-   fill(255,245);
- 
+  fill(255, 245);
+
   for (var i = 0; i < touches.length; i++) {
-    ellipse(touches[i].x, touches[i].y, 80,80);
-   
+    ellipse(touches[i].x, touches[i].y, 45, 45);
   }
-    fill(random(0, 255), random(0, 255), random(0, 255));
-    
+  fill(random(0, 255), random(0, 255), random(0, 255));
+
   beginShape();
   for (var i = 0; i < touches.length; i++) {
-  
     vertex(touches[i].x, touches[i].y);
   }
   endShape(CLOSE);
