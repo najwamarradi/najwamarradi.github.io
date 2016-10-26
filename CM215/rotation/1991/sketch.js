@@ -14,6 +14,11 @@ function setup() {
 function draw() {
   background(200);
 
+AX = (rotationY*F);
+VX += AX
+PX += VX;
+
+
   drawBall();
   textSize(45);
 
