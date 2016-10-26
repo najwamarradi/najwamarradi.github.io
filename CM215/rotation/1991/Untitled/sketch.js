@@ -8,7 +8,7 @@ function setup() {
 
   PX = windowWidth / 2;
   VX = 0;
-  F = 0, 01;
+  F = 0.01;
 }
 
 function draw() {
