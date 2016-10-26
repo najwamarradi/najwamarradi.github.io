@@ -15,9 +15,17 @@ function draw() {
   background(250);
 
 AX = (rotationY*F);
-VX += AX
+VX += AX;
 PX += VX;
-
+if(PX>=windowWidth )
+{
+  VX=-VX;
+}
+else if (PX<=0)
+{VX=-VX;}
+  if(PX>= windowWidth || PX<=0){VX=-VX}
+  
+}
 
   drawBall();
   textSize(45);
@@ -25,7 +33,7 @@ PX += VX;
   text("Rx: " + floor(rotationX), 100, 100);
   text("Ry: " + floor(rotationY), 100, 150);
   text("Rz: " + floor(rotationZ), 100, 200);
-}
+
 
 function drawBall() {
   fill(100);
