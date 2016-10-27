@@ -23,7 +23,7 @@ if(PX>=windowWidth )
 }
 else if (PX<=0)
 {VX=-VX;}
-  if(PX>= windowWidth || PX<=0){VX=-VX}
+  if(PX>= windowWidth || PX<=0){VX=-VX;}
   
 }
 
