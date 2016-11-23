@@ -7,13 +7,13 @@ var ydir = [];
 var radius = 15;
  
 function setup() {
-  createCanvas(500, 300);
+  createCanvas(500, 500);
  
   for (var i = 0; i < 10; i++) {
     x[i] = random(width);
     y[i] = random(height);
-    xspd[i] = random(1, 5);
-    yspd[i] = random(1, 5);
+    xspd[i] = random(2, 5);
+    yspd[i] = random(3, 5);
     xdir[i] = 1;
     ydir[i] = 1;
   }
