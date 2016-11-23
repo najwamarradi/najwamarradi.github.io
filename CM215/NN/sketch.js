@@ -1,28 +1,1 @@
-document.ontouchmove = function(event) {
-  event.preventDefault();
-}
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  ellipseMode(CENTER);
-  stroke(0);
-  noFill();
-  strokeWeight();
-}
-
-function draw() {
-  background(255);
-  fill(255, 245);
-
-  for (var i = 0; i < touches.length; i++) {
-    ellipse(touches[i].x, touches[i].y, 45, 45);
-  }
-  fill(random(0, 255), random(0, 255), random(0, 255));
-
-  beginShape();
-  for (var i = 0; i < touches.length; i++) {
-    vertex(touches[i].x, touches[i].y);
-  }
-  endShape(CLOSE);
-
-}
+var x = 180;var y = 180;var xspeed = 9;var yspeed = 10;function setup() {  createCanvas(windowWidth, windowHeight);  background (25);}function draw() {	//distance from center of the screen	var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);  	fill (random(200, 250), random(200, 250), random(200, 250));  	ellipse (x, y, d, d);  	//bouncing horizontally 	 x = x + xspeed;  	  	 if (x > windowWidth || x < 0)  {     	xspeed = -xspeed;  	}  	//bouncing veritcally  	y = y + yspeed;  	if (y > windowHeight || y < 0) {	 	  yspeed = -yspeed;  	}}1   0974M01.XML
