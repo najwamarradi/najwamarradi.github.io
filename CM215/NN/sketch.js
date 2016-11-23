@@ -1,1 +1,60 @@
-var x = 180;var y = 180;var xspeed = 9;var yspeed = 10;function setup() {  createCanvas(windowWidth, windowHeight);  background (25);}function draw() {	//distance from center of the screen	var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);  	fill (random(200, 250), random(200, 250), random(200, 250));  	ellipse (x, y, d, d);  	//bouncing horizontally 	 x = x + xspeed;  	  	 if (x > windowWidth || x < 0)  {     	xspeed = -xspeed;  	}  	//bouncing veritcally  	y = y + yspeed;  	if (y > windowHeight || y < 0) {	 	  yspeed = -yspeed;  	}}1   0974M01.XML
+var x = [];
+var y = [];
+var xspd = [];
+var yspd = [];
+var xdir = [];
+var ydir = [];
+var radius = 15;
+ 
+function setup() {
+  createCanvas(500, 300);
+ 
+  for (var i = 0; i < 10; i++) {
+    x[i] = random(width);
+    y[i] = random(height);
+    xspd[i] = random(1, 5);
+    yspd[i] = random(1, 5);
+    xdir[i] = 1;
+    ydir[i] = 1;
+  }
+ 
+}
+ 
+function draw() {
+  background(0);
+ 
+  move();
+  display();
+}
+ 
+function move() {
+  for (var i = 0; i < 1; i++) {
+    x[i] = x[i] + xspd[i] * xdir[i];
+    y[i] = y[i] + yspd[i] * ydir[i];
+ 
+    if (x[i] < radius) {
+      x[i] = radius;
+      xdir[i] *= -1;
+    } else if (x[i] > width - radius) {
+      x[i] = width - radius;
+      xdir[i] *= -1;
+    }
+ 
+    if (y[i] < radius) {
+      y[i] = radius;
+      ydir[i] *= -1;
+    } else if (y[i] > height - radius) {
+      y[i] = height - radius;
+      ydir[i] *= -1;
+    }
+  }
+ 
+}
+ 
+function display() {
+  for (var i = 0; i < 4; i++) {
+    noStroke();
+    fill(255, 255, 0);
+    ellipse(x[i], y[i], radius * 2, radius * 2);
+  }
+}
