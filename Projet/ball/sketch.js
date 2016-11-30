@@ -21,7 +21,7 @@ function setup() {
 }
  
 function draw() {
-  background(0);
+  background(255);
  
   move();
   display();
@@ -48,6 +48,13 @@ function move() {
       ydir[i] *= -1;
     }
   }
+  function draw() {
+ background(255);
+ textSize(40);
+ text("Rx: " + rotationX, 100, 100);
+ text("Ry: " + rotationY, 100, 150);
+ text("Rz: " + rotationZ, 100, 200);
+}
  
 }
  
