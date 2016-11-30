@@ -30,7 +30,7 @@
       obstacles[i].drawObstacles();
     }
 
-    // soit f la friction.
+    // si f la friction
     f = 0.1;
     //accélération
     accX = rotationY * f;
@@ -56,7 +56,7 @@
     }
    
 
-    if ((posy + ballSize / 2) >= windowHeight) {
+    if ((Posy + ballSize / 2) >= windowHeight) {
       vY = -vY * bounce;
       posy = windowHeight - ballSize / 2;
     } else if ((Posy - ballSize / 2) <= 0) {
@@ -66,7 +66,7 @@
     
 
     for (i = 0; i < 3; i++) {
-      if (dist(Posx, Posy, obstacles[i].posx, obstacles[i].Posy) <= ballSize / 2 + obstacles[i].size / 2) {
+      if (dist(Posx, Posy, obstacles[i].Posx, obstacles[i].Posy) <= ballSize / 2 + obstacles[i].size / 2) {
 
         if (obstacles[i].type == "block") {
           vX = -vX * bounce;
