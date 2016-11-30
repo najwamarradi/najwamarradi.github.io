@@ -88,7 +88,8 @@
       }
     }
   }
-  
+  /******************************************** fin fonction draw ******************************************/
+
   function drawBall() {
     fill(200, 10, 0);
     ellipse(Posx, Posy, ballSize, ballSize);
