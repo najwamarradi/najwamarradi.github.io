@@ -52,16 +52,16 @@
       Posx = windowWidth - ballSize / 2;
     } else if ((Posx - ballSize / 2) <= 0) {
       vX = -vX * bounce;
-      posx = ballSize / 2;
+      Posx = ballSize / 2;
     }
    
 
     if ((Posy + ballSize / 2) >= windowHeight) {
       vY = -vY * bounce;
-      posy = windowHeight - ballSize / 2;
+      Posy = windowHeight - ballSize / 2;
     } else if ((Posy - ballSize / 2) <= 0) {
       vY = -vY * bounce;
-      posy = ballSize / 2;
+      Posy = ballSize / 2;
     }
     
 
