@@ -1,5 +1,5 @@
   var obstacles = []; /* Aray */
-  var ballSize, vY, vX, accX, accY, xPos, yPos, bounce, f, colision, bonus, malus, block, score, typeObstacle;
+  var ballSize, vY, vX, accX, accY, Posx, Posy, bounce, f, colision, bonus, malus, block, score, typeObstacle;
 
   function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -16,8 +16,8 @@
     score = 0;
     ballSize = 30;
     bounce = 0.8;
-    xPos = windowWidth / 2;
-    yPos = windowHeight / 2;
+    Posx = windowWidth / 2;
+    Posy = windowHeight / 2;
   }
 
   function draw() {
@@ -39,34 +39,34 @@
     vX += accX;
     vY += accY;
     //position
-    xPos += vX;
-    yPos += vY;
+    Posx += vX;
+  Posy  += vY;
 
-    /******************************************DEBUT DES CONDITIONS***************************************/
+    
 
     text("score:" + score ,15,35);
-    //condition de rebond sur les bords de gauche et de droite.
+   
 
-    if ((xPos + ballSize / 2) >= windowWidth) {
+    if ((posx + ballSize / 2) >= windowWidth) {
       vX = -vX * bounce;
-      xPos = windowWidth - ballSize / 2;
-    } else if ((xPos - ballSize / 2) <= 0) {
+      Posx = windowWidth - ballSize / 2;
+    } else if ((Posx - ballSize / 2) <= 0) {
       vX = -vX * bounce;
-      xPos = ballSize / 2;
+      posx = ballSize / 2;
     }
-    //condition de rebond sur les bords du haut et du bas.
+   
 
-    if ((yPos + ballSize / 2) >= windowHeight) {
+    if ((posy + ballSize / 2) >= windowHeight) {
       vY = -vY * bounce;
-      yPos = windowHeight - ballSize / 2;
-    } else if ((yPos - ballSize / 2) <= 0) {
+      posy = windowHeight - ballSize / 2;
+    } else if ((Posy - ballSize / 2) <= 0) {
       vY = -vY * bounce;
-      yPos = ballSize / 2;
+      posy = ballSize / 2;
     }
-    //condition de rebond sur les obstacles.
+    
 
     for (i = 0; i < 3; i++) {
-      if (dist(xPos, yPos, obstacles[i].xPos, obstacles[i].yPos) <= ballSize / 2 + obstacles[i].size / 2) {
+      if (dist(Posx, Posy, obstacles[i].posx, obstacles[i].Posy) <= ballSize / 2 + obstacles[i].size / 2) {
 
         if (obstacles[i].type == "block") {
           vX = -vX * bounce;
@@ -92,19 +92,19 @@
 
   function drawBall() {
     fill(200, 10, 0);
-    ellipse(xPos, yPos, ballSize, ballSize);
+    ellipse(Posx, Posy, ballSize, ballSize);
   }
 
   function Obstacle(obstacles) {
     this.type = obstacles;
-    this.xPos = random(0, windowWidth);
-    this.yPos = random(0, windowHeight);
+    this.Posx = random(0, windowWidth);
+    this.Posy = random(0, windowHeight);
     this.size = random(25, 50);
     this.color = color(random(0, 255), random(0, 255), random(0, 255));
     this.colision = false;
 
     this.drawObstacles = function() {
       fill(this.color);
-      ellipse(this.xPos, this.yPos, this.size, this.size);
+      ellipse(this.Posx, this.Posy, this.size, this.size);
     }
   }
