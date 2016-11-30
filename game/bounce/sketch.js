@@ -47,7 +47,7 @@
     text("score:" + score ,15,35);
    
 
-    if ((posx + ballSize / 2) >= windowWidth) {
+    if ((Posx + ballSize / 2) >= windowWidth) {
       vX = -vX * bounce;
       Posx = windowWidth - ballSize / 2;
     } else if ((Posx - ballSize / 2) <= 0) {
@@ -88,8 +88,7 @@
       }
     }
   }
-  /******************************************** fin fonction draw ******************************************/
-
+  
   function drawBall() {
     fill(200, 10, 0);
     ellipse(Posx, Posy, ballSize, ballSize);
